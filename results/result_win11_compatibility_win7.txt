@@ -1,0 +1,55 @@
+Microsoft Windows [Version 10.0.22631.3296]
+
+[First Handle] List the contents of the directory...
+RestartScan: false, Mask: (null), Result: 0, Filename: .
+RestartScan: false, Mask: (null), Result: 0, Filename: ..
+RestartScan: false, Mask: (null), Result: 0, Filename: a-file.h
+RestartScan: false, Mask: (null), Result: 0, Filename: another-file.h
+RestartScan: false, Mask: (null), Result: 80000006
+
+[First Handle] Specify a new mask without restarting the scan...
+RestartScan: false, Mask: *.h, Result: 80000006
+
+[First Handle] Specify a new mask, restarting the scan...
+RestartScan: true, Mask: *.h, Result: 0, Filename: a-file.h
+RestartScan: false, Mask: (null), Result: 0, Filename: another-file.h
+RestartScan: false, Mask: (null), Result: 80000006
+
+[First Handle] Restart the scan without a mask...
+RestartScan: true, Mask: (null), Result: 0, Filename: a-file.h
+RestartScan: false, Mask: (null), Result: 0, Filename: another-file.h
+RestartScan: false, Mask: (null), Result: 80000006
+
+[First Handle] Restart the scan with an empty mask...
+RestartScan: true, Mask: , Result: 0, Filename: a-file.h
+RestartScan: false, Mask: (null), Result: 0, Filename: another-file.h
+RestartScan: false, Mask: (null), Result: 80000006
+
+[First Handle] Restart the scan with a whitespace mask...
+RestartScan: true, Mask:  , Result: 80000006
+RestartScan: false, Mask: (null), Result: 80000006
+RestartScan: false, Mask: (null), Result: 80000006
+
+[First Handle] Restart the scan with a mask that doesn't match anything...
+RestartScan: true, Mask: not-a-file.h, Result: 80000006
+
+[First Handle] Restart the scan with a mask that matches a single file...
+RestartScan: true, Mask: a-file.h, Result: 0, Filename: a-file.h
+RestartScan: false, Mask: (null), Result: 80000006
+
+[First Handle] Restart the scan with a mask that matches everything...
+RestartScan: true, Mask: *, Result: 0, Filename: .
+RestartScan: false, Mask: (null), Result: 0, Filename: ..
+RestartScan: false, Mask: (null), Result: 0, Filename: a-file.h
+RestartScan: false, Mask: (null), Result: 0, Filename: another-file.h
+RestartScan: false, Mask: (null), Result: 80000006
+
+[Second Handle] Scan with a mask that doesn't match anything...
+RestartScan: true, Mask: not-a-file.h, Result: C000000F
+
+[Second Handle] List the contents of the directory...
+RestartScan: false, Mask: (null), Result: 80000006
+RestartScan: false, Mask: (null), Result: 80000006
+RestartScan: false, Mask: (null), Result: 80000006
+RestartScan: false, Mask: (null), Result: 80000006
+RestartScan: false, Mask: (null), Result: 80000006
